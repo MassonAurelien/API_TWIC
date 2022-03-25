@@ -29,6 +29,7 @@ private daoFactory daoFactory;
 				Ville ville = new Ville(resultat.getString("Code_commune_INSEE"),resultat.getString("Nom_commune"),resultat.getString("Code_postal"),resultat.getString("Libelle_acheminement"),
 						resultat.getString("Ligne_5"),resultat.getString("Latitude"),resultat.getString("Longitude"));
 				tab.add(ville);
+				
 			}
 			return tab;
 		}

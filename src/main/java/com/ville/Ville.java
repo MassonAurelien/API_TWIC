@@ -1,33 +1,33 @@
 package com.ville;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ville_france")
 public class Ville {
 	
+	
+	@Id
+	@Column(name="Code_commune_INSEE",nullable = true)
 	private String codeINSEE;
+	@Column(name="Nom_commune",nullable = true)
 	private String commune;
+	@Column(name="Code_postal",nullable = true)
 	private String codePostal;
+	@Column(name="Libelle_acheminement",nullable = true)
 	private String libelle_acheminement;
+	@Column(name="Ligne_5",nullable = true)
 	private String ligne5;
+	@Column(name="Longitude",nullable = true)
 	private String longitude;
+	@Column(name="Latitude",nullable = true)
 	private String latitude;
 	
-	
-	public Ville(String codeINSEE, String commune, String codePostal, String libelle_acheminement, String ligne5,
-			String longitude, String latitude) {
-		this.codeINSEE = codeINSEE;
-		this.commune = commune;
-		this.codePostal = codePostal;
-		this.libelle_acheminement = libelle_acheminement;
-		this.ligne5 = ligne5;
-		this.longitude = longitude;
-		this.latitude = latitude;
-	}
-	
-	public Ville(String code,String commune,String codePostal) {
-		this(code,commune,codePostal,"00000","00000","00000","00000");
-	}
-	
 	public String toString() {
-		return this.getCommune()+" : "+this.getCodePostal()+"\n";
+		return codeINSEE+" "+commune+" "+codePostal+" "+libelle_acheminement+" "+ligne5+" "+latitude+" "+longitude;
 	}
 	
 	public String getCodeINSEE() {
@@ -76,6 +76,22 @@ public class Ville {
 
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
+	}
+
+	public Ville(String codeINSEE, String commune, String codePostal, String libelle_acheminement, String ligne5,
+			String longitude, String latitude) {
+		super();
+		this.codeINSEE = codeINSEE;
+		this.commune = commune;
+		this.codePostal = codePostal;
+		this.libelle_acheminement = libelle_acheminement;
+		this.ligne5 = ligne5;
+		this.longitude = longitude;
+		this.latitude = latitude;
+	}
+	
+	public Ville() {
+		super();
 	}
 
 	public String getLatitude() {
