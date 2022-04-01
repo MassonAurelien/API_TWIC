@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VilleRepo extends JpaRepository<Ville, String>, JpaSpecificationExecutor<Ville>{
-	List<Ville> findAllByCodePostal(String CodePostal);
+	List<Ville> findAllByCodePostal(String codePostal);
     List<Ville> findAll();
 }
