@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ville.Ville;
-import com.ville.VilleRepo;
+import com.entity.Ville;
+import com.model.VilleModel;
+import com.repository.VilleRepo;
 
 @RestController
 public class VilleController {
@@ -27,9 +28,9 @@ public class VilleController {
 	//Fonction pour enregistrer dans la BDD
 	@PostMapping("AjouterVille")
 	public void post(
-			@RequestBody Ville ville
+			@RequestBody VilleModel ville
 			) {
-		this.villeRepo.save(ville);
+		this.villeRepo.save(new Ville(ville));
 		
 	}
 	
