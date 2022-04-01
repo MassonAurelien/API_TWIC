@@ -15,6 +15,9 @@ public class VilleModel {
 	private String longitude;
 	private String latitude;
 	
+	public String toString() {
+		return codeINSEE+" "+commune+" "+codePostal+" "+libelleAcheminement+" "+ligne5+" "+latitude+" "+longitude;
+	}
 	
 	public VilleModel(String codeINSEE, String commune, String codePostal, String libelleAcheminement, String ligne5,
 			String longitude, String latitude) {
